@@ -1,5 +1,16 @@
 = Unreal4 =
 == code snippets ==
-# [[construction and component]]
+# [[Component]]
 # [[math]]
-# [[input]]
+# [[InputBinding]]
+# [[Camera]]
+# [[PawnMovementComponent]]
+# [[Movement]]
+# [[FVector]]
+# [[GameMode]]
+# [[Log]]
+# [[Color]]
+# [[Character]]
+
+== ideas ==
+# [[how to learn]]

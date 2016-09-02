@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+* FColor
+{{{class="brush:c++"
+	FColor::Yellow
+}}}

@@ -1,0 +1,18 @@
+
+
+
+
+
+
+
+
+* print to screen
+{{{class = "brush:c++"
+	GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Yellow, TEXT("hello world"));
+}}}
+
+
+* print to Output Log 
+{{{class = "brush:c++"
+	UE_LOG(LogTemp, Warning, TEXT("%d"), 200);
+}}}

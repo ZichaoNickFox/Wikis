@@ -1,8 +1,0 @@
-
-
-{{{class="brush: c++"
-	USphereComponent* sphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("RootComponent"));
-	RootComponent = sphereComponent;
-	sphereComponent->SetSphereRadius(40.0f);
-	sphereComponent->SetCollisionProfileName("Pawn");
-}}}

@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+
+
+* clamp 
+{{{class="brush:c++"
+	// clamp XYZ below max size
+	FVector GetClampedToMaxSize(float maxSize) const; 
+}}}

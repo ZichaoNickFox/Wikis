@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+
+{{{class="brush:c++"
+	AMyPawn::AMyPawn() {
+		// set MyPawn to recevie player input
+		AutoPossessPlayer = EAutoReceiveInput::Player0;
+	}
+	
+	void AMyPawn::SetupPlayerInputComponent(class UInputComponent* InputComonent) {
+		Super:SetupPlayerInputComponent(InputComponent);
+		
+		// bind to movement
+		InputComponent->BindAction("Grow", IE_Pressed, this, &AMyPawn::StartGrowing);
+		InputComponent->BindAction("Grow", IE_Realsed, this, &AMyPawn::StopGrowing);
+		InputComponent->BindAxis("MoveForward", this, &MyPawn::MoveX);
+		InputComponent->BindAxis("MoveRight", this, &MyPawn::MoveY);
+		
+		// bind to rotation
+		InputComponent->BindAxis("Turn", this, &AddControllerYawInput);
+		InputComponent->BindAxis("LookUp", this, &AddControllerPitchInput);
+	}
+	
+	void AMyPawn::StartGrouwing() {}
+	void AMyPawn::StopGrowing(){}
+	void AMyPawn::MoveX(float AxisValue){}
+	void AMyPawn::MoveY(float AxisValue){}
+}}}

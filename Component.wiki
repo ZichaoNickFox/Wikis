@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+* construction 
+{{{class="brush: c++"
+class MyActor : public AActor{
+	GENERATED_UCLASS_BODY()
+};
+MyActor::MyActor(const FObjectInitilizer& objectInitializer) {
+	PrimaryActorTick.bCanEverTick = true;
+}
+}}}
+
+* collision component normal setting
+{{{class="brush: c++"
+	USphereComponent* sphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("RootComponent"));
+	RootComponent = sphereComponent;
+	sphereComponent->SetSphereRadius(40.0f);
+	sphereComponent->SetCollisionProfileName("Pawn");
+}}}
+	
+* staticMesh component normal setting	
+{{{class="brush: c++"
+	UStaticMeshComponent* staticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualSphere"));
+	staticMeshComponent->SetupAttachment(RootComponent);
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> sphereAsset(TEXT("/Engine/BasicShapes/Sphere.Sphere"));
+	if (sphereAsset.Succeeded()) {
+		staticMeshComponent->SetStaticMesh(sphereAsset.Object);
+		staticMeshComponent->SetRelativeLocation(FVector(0, 0, 0));
+		staticMeshComponent->SetWorldScale3D(FVector(0.8f));
+	}
+}}}
+
+* particleSystem component normal setting
+{{{class="brush: c++"
+	// particle system
+	OurParticleSystem = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Movement particles"));
+	OurParticleSystem->SetupAttachment(staticMeshComponent);
+	OurParticleSystem->bAutoActivate = false;
+	OurParticleSystem->SetRelativeLocation(FVector(-20, 0, 20));
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleAsset(TEXT("/Game/StarterContent/Particles/P_Fire.P_Fire"));
+	if (ParticleAsset.Succeeded()) {
+		OurParticleSystem->SetTemplate(ParticleAsset.Object);
+	}
+}}}
+
+* springArm component normal setting
+{{{class="brush: c++"
+	// spring arm
+	USpringArmComponent* springArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraAttachmentArm"));
+	springArm->SetupAttachment(RootComponent);
+	springArm->RelativeRotation = FRotator(-45, 0, 0);
+	springArm->TargetArmLength = 400;
+	springArm->bEnableCameraLag = true;
+	springArm->CameraLagSpeed = 3;
+	
+	// camera
+	UCameraComponent* camera = CreateDefaultSubobject<UCameraComponent>(TEXT("ActualCamera"));
+	camera->SetupAttachment(springArm, USpringArmComponent::SocketName);
+}}}
+
+* movement component normal setting
+[[PawnMovementComponent]]
+{{{class="brush: c++"
+	OurMovementComponent = CreateDefaultSubobject<UCollidingPawnMovementComponent>(TEXT("CustomMovementComponent"));
+	OurMovementComponent->UpdatedComponent = RootComponent;
+}}}
+
+* FPS components normal setting
+{{{class="brush:c++"
+	class AFPSCharacter : public ACharacter {
+		UPROPERTY(VisibleAnywhere)
+		UCameraComponent* FPSCameraComponent;
+		
+		UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+		USkeletalMeshComponent* FPSMesh;
+	}
+	AFPSCharacter::AFPSCharacter() {
+		FPSCameraComponent = CreateDefalutSubObject<UCameraComponent>(TEXT("FPSCameraComp"));
+		FPSCameraComponent->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+		
+	}
+}}}
