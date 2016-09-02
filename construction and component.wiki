@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+.h
+{{{class="brush: c++"
+class MyActor : public AActor{
+	GENERATED_UCLASS_BODY()
+	
+	[[add collision component]]	
+	
+	[[add staticMesh component]]
+
+	[[add particleSystem component]]
+
+	[[add springArm component and camera component]]
+
+	[[add movement component]]
+};
+}}}
+
+.cpp
+{{{class="brush: c++"
+MyActor::MyActor(const FObjectInitilizer& objectInitializer) {
+
+}
+}}}
+

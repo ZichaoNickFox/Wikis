@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+{{{class = "brush:c++"
+// if value < min then value = min
+// if value > max then value = max
+FMath::Clamp(float value, float min, float max);      
+}}}

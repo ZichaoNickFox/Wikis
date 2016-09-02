@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+
+{{{class="brush:c++"
+	AMyPawn::AMyPawn() {
+		// set MyPawn to recevie player input
+		AutoPossessPlayer = EAutoReceiveInput::Player0;
+	}
+}}}
