@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+* destroy actor after 5s
+{{{class = "brush:c++"
+	MyActor::MyActor() {
+		InitialLifeSpan = 5.0f;
+	}
+}}}

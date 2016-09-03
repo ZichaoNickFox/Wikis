@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+GENERATED_BODY会自动生成构造函数MyClass::MyClass(const FObjectInitializer& ObjectInitializer):Super(ObjectInitilizer){}
+GENERATED_UINTERFACE_BODY()不会自动生成构造函数，需要自己写
+GENERATED_UCLASS_BODY()不会自动生成构造函数，需要自己写
+
+* class
+{{{class="brush: c++"
+	class MyActor : public AActor{
+		GENERATED_UCLASS_BODY()
+	};
+	MyActor::MyActor(const FObjectInitilizer& objectInitializer) {
+		PrimaryActorTick.bCanEverTick = true;
+	}
+}}}
+
+* interface
+{{{class="brush: c++"
+	class UMyInterface : public UInterface {
+		GENERATED_UINTERFACE_BODY()
+	}
+	class IMyInterface {
+		GENERATED_IINTERFACE_BODY()
+	}
+}}}

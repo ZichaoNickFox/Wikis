@@ -1,0 +1,26 @@
+
+
+
+
+
+
+
+
+
+* spawn actor
+{{{class = "brush:c++"
+	// in .h
+	UPROPERTY(EditDefaultsOnly, Category = Projectile)
+	TSubclassOf<class AActor> ActorSubClass;
+	
+	// in .cpp
+	UWorld* World = GetWorld();
+	if (World) {
+		FActorSpawnParameters SpawnParameters;
+		// now set spawn params
+		// e.g.
+		//SpawnParameters.Owner = this;
+		//SpawnParameters.Instigator = Instigator;
+		AActor* MyActor = World->SpawnActor<AActor>(ActorSubClass, LocationVector, RatationVector, SpawnParameters);
+	}
+}}}

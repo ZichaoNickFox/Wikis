@@ -5,26 +5,19 @@
 
 
 
-* construction 
-{{{class="brush: c++"
-class MyActor : public AActor{
-	GENERATED_UCLASS_BODY()
-};
-MyActor::MyActor(const FObjectInitilizer& objectInitializer) {
-	PrimaryActorTick.bCanEverTick = true;
-}
-}}}
 
 * collision component normal setting
 {{{class="brush: c++"
 	USphereComponent* sphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("RootComponent"));
-	RootComponent = sphereComponent;
+	//RootComponent = sphereComponent;
+	sphereComponent->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::KeepRelativeTransform)
 	sphereComponent->SetSphereRadius(40.0f);
 	sphereComponent->SetCollisionProfileName("Pawn");
 }}}
 	
 * staticMesh component normal setting	
 {{{class="brush: c++"
+	// 注意区分StaticMesh 和HierarchicalInstancedStaticMesh，如果设置mesh时总不出现在屏幕上，很可能勿用了HierarchicalInstancedStaticMesh
 	UStaticMeshComponent* staticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualSphere"));
 	staticMeshComponent->SetupAttachment(RootComponent);
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> sphereAsset(TEXT("/Engine/BasicShapes/Sphere.Sphere"));
@@ -67,21 +60,6 @@ MyActor::MyActor(const FObjectInitilizer& objectInitializer) {
 [[PawnMovementComponent]]
 {{{class="brush: c++"
 	OurMovementComponent = CreateDefaultSubobject<UCollidingPawnMovementComponent>(TEXT("CustomMovementComponent"));
+	// set controll which component to move
 	OurMovementComponent->UpdatedComponent = RootComponent;
-}}}
-
-* FPS components normal setting
-{{{class="brush:c++"
-	class AFPSCharacter : public ACharacter {
-		UPROPERTY(VisibleAnywhere)
-		UCameraComponent* FPSCameraComponent;
-		
-		UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
-		USkeletalMeshComponent* FPSMesh;
-	}
-	AFPSCharacter::AFPSCharacter() {
-		FPSCameraComponent = CreateDefalutSubObject<UCameraComponent>(TEXT("FPSCameraComp"));
-		FPSCameraComponent->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::KeepRelativeTransform);
-		
-	}
 }}}

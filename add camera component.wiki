@@ -1,6 +1,0 @@
-
-{{{class="brush: c++"
-	// camera
-	UCameraComponent* camera = CreateDefaultSubobject<UCameraComponent>(TEXT("ActualCamera"));
-	camera->SetupAttachment(springArm, USpringArmComponent::SocketName);
-}}}

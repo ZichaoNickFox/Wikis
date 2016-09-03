@@ -1,16 +1,33 @@
 = Unreal4 =
 == code snippets ==
-# [[Component]]
-# [[math]]
-# [[InputBinding]]
-# [[Camera]]
-# [[PawnMovementComponent]]
-# [[Movement]]
-# [[FVector]]
-# [[GameMode]]
-# [[Log]]
-# [[Color]]
-# [[Character]]
+# [[codeSnippets/Class Interface Struct Enum|Class Interface Struct Enum]]
+# [[codeSnippets/Component|Component]]
+# [[codeSnippets/math|math]]
+# [[codeSnippets/InputBinding|InputBinding]]
+# [[codeSnippets/Camera|Camera]]
+# [[codeSnippets/PawnMovementComponent|PawnMovementComponent]]
+# [[codeSnippets/Movement|Movement]]
+# [[codeSnippets/FVector|FVector]]
+# [[codeSnippets/GameMode|GameMode]]
+# [[codeSnippets/Log|Log]]
+# [[codeSnippets/Color|Color]]
+# [[codeSnippets/Character|Character]]
+# [[codeSnippets/Spawn|Spawn]]
+# [[codeSnippets/Destroy|Destroy]]
+# [[codeSnippets/Collision|Collision]]
+# [[codeSnippets/Unreal file public private|Unreal file public private]]
+
+== FPS game ==
+# [[FPSGame/Character Component hierachy|FPS Character Component hierachy]]
+# [[FPSGame/Projectile hierachy|FPS Projectile hierachy]]
+# [[FPSGame/Fire|FPS Fire]]
+
+== c++ ==
+# [[c++/mutable|mutable]]
+# [[c++/pointer|pointer]]
+
+== 3d math ==
+# [[3dMath/coordinator|coordinator]]
 
 == ideas ==
-# [[how to learn]]
+# [[ideas/how to learn|how to learn]]
