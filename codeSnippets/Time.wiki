@@ -1,0 +1,42 @@
+
+
+
+
+
+
+
+
+
+
+
+* register and unregister timer 
+倒计时案例
+{{{class = "brush:c++"
+	class AMyActor : public AActor {
+		FTimeHandler CountdownTimeHandler;
+		int32 CountdownTime;
+		void TickCallback();
+		void RegisterTimerHandler();
+		void UnregisterTimerHandler();
+	}
+	
+	void AMyActor::BeginPlay() {
+		CountdownTime = 3;
+		RegisterTimerHandler();
+	}
+	
+	void AMyActor::TickCallback() {
+		CountdownTime = CountdownTime - 1;
+		if (CountdownTime < 1) {
+			UnregisterTimerhandler();
+		}
+	}
+	
+	void AMyActor::RegisterTimerHandler(){
+		GetWorldTimerManager().SetTimer(CountdownTimerHandler, this, &AMyActor::TickCallback, 1,0f, true);
+	}
+
+	void AMyActor::UnregisterTimerHandler(){
+		GetWorldTimerManager().ClearTimer(CountdownTimerHandler);
+	}
+}}}

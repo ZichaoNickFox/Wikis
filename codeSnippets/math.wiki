@@ -19,4 +19,17 @@
 	// if value < min then value = min
 	// if value > max then value = max
 	FMath::Clamp(float value, float min, float max);      
+	
+	// use template
+	float zoomFector = 2.0f;
+	FMath::Clamp<float>(zoomFector, 0.0f, 1.0f);
 }}}
+
+* lerp
+{{{class="brush:c++"
+	float zoomFector = 2.0f;
+	zoomFector = FMath::Clamp<float>(zoomFector, 0.0f, 1.0f);
+	// lerp factor must be constrained between 0, 1
+	FMath::Lerp<float>(90.0f, 60.0f, zoomFector);
+}}}
+

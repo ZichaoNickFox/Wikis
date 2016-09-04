@@ -53,3 +53,25 @@
 		CameraComponent->bUsePawnControlRotation = true;
 	}
 }}}
+
+* zoomIn zoomOut
+这里的实现思路是修改相机的FOV，默认为90，当FOV缩小时，因为屏幕大小不变，所以镜头拉近了。
+{{{class="brush:c++"
+	class AMyCameraPawn : public APawn {
+		float ZoomFactor;
+	}
+	void AMyCameraPawn::Tick(float DeltaTime) {
+		if (bZoomingIn)
+		{
+			ZoomFactor += DeltaTime / 0.5f;
+		} else {
+			ZoomFactor -= DeltaTime / 0.25f;
+		}
+				
+		ZoomFactor = FMath::Clamp<float>(ZoomFactor, 0.0f, 1.0f);
+		CameraComponent->FieldOfView = FMath::Lerp<float>(90.0f, 60.0f, ZoomFactor);
+	}
+}}}
+
+* Movement camera
+* 

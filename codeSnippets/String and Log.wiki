@@ -1,0 +1,40 @@
+
+
+
+
+
+
+
+= Log =
+* print to screen
+{{{class = "brush:c++"
+	// no formated on screen log
+	GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Yellow, TEXT("hello world"));
+	
+	// formated on screen log
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Some variable values: x: %f, y: %f"), x, y));
+}}}
+
+
+* print to Output Log 
+https://wiki.unrealengine.com/Logs,_Printing_Messages_To_Yourself_During_Runtime#Log_formatting
+{{{class = "brush:c++"
+	// log FString
+	FString content = "hello world";
+	UE_LOG(LogTemp, Warning, TEXT("%s"), *content);
+	
+	// log int
+	UE_LOG(LogTemp, Warning, TEXT("%d"), 200);
+}}}
+
+= FString =
+* 初始化
+{{{class = "brush:c++"
+	// int值初始化
+    FString::FromInt(2);
+	// 字符串初始化
+	FString s = "hello world";
+}}}
+
+* FString conversion
+https://wiki.unrealengine.com/String_Conversions:_FString_to_FName,_FString_to_Int32,_Float_to_FString

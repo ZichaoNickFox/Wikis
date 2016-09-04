@@ -5,7 +5,7 @@
 
 
 
-
+= Add Component =
 * collision component normal setting
 {{{class="brush: c++"
 	USphereComponent* sphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("RootComponent"));
@@ -62,4 +62,16 @@
 	OurMovementComponent = CreateDefaultSubobject<UCollidingPawnMovementComponent>(TEXT("CustomMovementComponent"));
 	// set controll which component to move
 	OurMovementComponent->UpdatedComponent = RootComponent;
+	OurMovementComponent->SetupAttachment(RootComponent);
 }}}
+
+
+= Get Component =
+* Actor::FindComponentByClass
+{{{class="brush: c++"
+UPawnMovementComponent* APawn::GetMovementComponent() const
+{
+	return FindComponentByClass<UPawnMovementComponent>();
+}
+}}}
+

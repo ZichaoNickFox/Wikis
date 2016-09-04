@@ -5,9 +5,10 @@
 
 
 
+* spawn actor and pass args to it
+只能自己写个Init函数，在SpawnActor之后调用
 
-
-* spawn actor
+* spawn actor with SpawnActor function params
 {{{class = "brush:c++"
 	// in .h
 	UPROPERTY(EditDefaultsOnly, Category = Projectile)
@@ -24,3 +25,4 @@
 		AActor* MyActor = World->SpawnActor<AActor>(ActorSubClass, LocationVector, RatationVector, SpawnParameters);
 	}
 }}}
+

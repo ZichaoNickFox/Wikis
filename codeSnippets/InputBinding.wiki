@@ -17,7 +17,7 @@
 		
 		// bind to movement
 		InputComponent->BindAction("Grow", IE_Pressed, this, &AMyPawn::StartGrowing);
-		InputComponent->BindAction("Grow", IE_Realsed, this, &AMyPawn::StopGrowing);
+		InputComponent->BindAction("Grow", IE_Released, this, &AMyPawn::StopGrowing);
 		InputComponent->BindAxis("MoveForward", this, &MyPawn::MoveX);
 		InputComponent->BindAxis("MoveRight", this, &MyPawn::MoveY);
 		

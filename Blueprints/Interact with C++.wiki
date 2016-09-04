@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+* UFUNCTION(BlueprintNativeEvent) 
+	* 与BlueprintImplementableEvent的不同在于c++端有默认实现
+	* in c++
+{{{class = "brush:c++"
+	class AMyActor : public AActor {
+		UFUNCTION(BlueprintNativeEvent)
+		void Foo();
+		virtual void Foo_Implementation();
+		virtual void BeginPlay() override;
+	}
+	void AMyActor::Foo_Implementation() {
+		GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Yellow, TEXT("this is c++'s implementation"));
+	}
+	virtual void AMyActor::BeginPlay() {
+		Foo();
+	}
+}}}
+	* in blueprint
+	{{file:BlueprintNativeEvent.png}}
+	
+
+
+
+* UFUNTION(BlueprintImplementableEvent)
+	* 与BlueprintNativeEvent的不同在于c++端没有默认实现
+	* in c++
+{{{class = "brush:c++"
+	class AMyActor : public AActor {
+		UFUNCTION(BlueprintImplementableEvent)
+		void Foo();
+		virtual void BeginPlay() override;
+	}	
+	virtual void AMyActor::BeginPlay() {
+		Foo();
+	}
+}}}
+	* in blueprint
+	{{file:BlueprintImplementableEvent.png}}
+
