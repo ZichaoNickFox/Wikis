@@ -1,3 +1,4 @@
+
 = Unreal4 =
 == code snippets ==
 # [[codeSnippets/Class Interface Struct Enum|Class Interface Struct Enum]]
@@ -16,18 +17,27 @@
 # [[codeSnippets/Destroy|Destroy]]
 # [[codeSnippets/Collision|Collision]]
 # [[codeSnippets/Unreal file public private|Unreal file public private]]
+# [[codeSnippets/HUD|HUD]]
+
+== Blueprints ==
+# [[Blueprints/Animation and StateMachine|Animation and StateMachine]]
 
 == FPS game ==
-# [[FPSGame/Character Component hierachy|FPS Character Component hierachy]]
-# [[FPSGame/Projectile hierachy|FPS Projectile hierachy]]
-# [[FPSGame/Fire|FPS Fire]]
+# [[FPSGame/Character Component hierachy|Character Component hierachy]]
+# [[FPSGame/Projectile hierachy|Projectile hierachy]]
+# [[FPSGame/Fire|Fire]]
+# [[FPSGame/Crosshair|CrossHair]]
 
-== c++ ==
+= c++ =
 # [[c++/mutable|mutable]]
 # [[c++/pointer|pointer]]
 
-== 3d math ==
-# [[3dMath/coordinator|coordinator]]
+= 3d math =
+# [[3dMath/coordinator|坐标系]]
+# [[3dMath/Transform|变换]]
 
-== ideas ==
-# [[ideas/how to learn|how to learn]]
+= ideas =
+# [[ideas/how to learn|如何学习]]
+
+= vim =
+# [[vim/operations|常用易忘操作]]

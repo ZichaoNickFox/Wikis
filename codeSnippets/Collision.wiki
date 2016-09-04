@@ -20,3 +20,31 @@ overlap与除ignore外的所有相撞都是overlap，会发出overlap事件
 
 * custom self collision profile
 {{https://docs.unrealengine.com/latest/INT/Programming/Tutorials/FirstPersonShooter/3/3/index.html}}
+
+* code
+{{https://docs.unrealengine.com/latest/INT/Programming/Tutorials/FirstPersonShooter/3/4/index.html}}
+1、写了下边代码之后，还必须在蓝图MyActor蓝图的Collision组件中设置presets为
+MyCollisionComponent->BodyInstace.SetCollisionProfileName(TEXT("Projectile")); 
+上句话中"projectile"的内容选项
+2、需要在被撞物体的Physics Category中，将Simulate Physics设置为true
+3、如果还是不能实现预期效果，需要被撞物体的Collision Category中修改presents选项
+{{{class="brush:c++"
+	class MyActor : public AActor {
+		CollisionComponent* MyCollisionComponent;
+	
+		UFUNCTION()
+		void OnHit(UPrimitiveComponent* HitComponent, class AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+		
+	}
+	
+	MyActor::MyActor() {
+		MyCollisionComponent->BodyInstace.SetCollisionProfileName(TEXT("Projectile")); // set collision profile name
+		MyCollisionComponent->OnComponentHit.AddDynamic(this, &MyActor::OnHit);
+	}
+	
+	void MyActor::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit) {
+		if (OtherActor != this && OtherComponent->IsSimulatingPhysics()) {
+			OtherComponent->AddImpulseAtLocation(MyCollisionComponent,/*ProjectileMovementComponent->Velocity*/ 100 * 100.0f, Hit.ImpactPoint);
+		}
+	}
+}}}

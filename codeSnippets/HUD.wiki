@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* [[../FPSGame/Crosshair|FPS Game Crosshair]]
+1、不要忘了在蓝图中设置相应的资源
+2、不要忘了在project setting中设置相应的hud
