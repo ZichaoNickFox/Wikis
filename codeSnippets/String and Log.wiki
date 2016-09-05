@@ -36,5 +36,13 @@ https://wiki.unrealengine.com/Logs,_Printing_Messages_To_Yourself_During_Runtime
 	FString s = "hello world";
 }}}
 
+
 * FString conversion
 https://wiki.unrealengine.com/String_Conversions:_FString_to_FName,_FString_to_Int32,_Float_to_FString
+
+
+= FText =
+* 初始化，与FString相同
+{{{class = "brush:c++"
+	FText::FromtString(TEXT("xxx"));
+}}}

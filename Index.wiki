@@ -17,10 +17,12 @@
 # [[codeSnippets/Spawn|Spawn]]
 # [[codeSnippets/Destroy|Destroy]]
 # [[codeSnippets/Collision|Collision]]
-# [[codeSnippets/Unreal file public private|Unreal file public private]]
 # [[codeSnippets/HUD|HUD]]
+# [[codeSnippets/Slate|Slate]]
 # [[codeSnippets/Time|Time]]
 # [[codeSnippets/Delegate|Delegate]]
+# [[codeSnippets/GameModule|GameModule]]
+# [[codeSnippets/Get World Instances|Get World Instances]]
 
 == Blueprints ==
 # [[Blueprints/Animation and StateMachine|Animation and StateMachine]]
