@@ -1,0 +1,21 @@
+
+
+
+
+
+
+
+
+
+
+
+* World Settings
+{{{class = "brush:c++"
+	AMyGameMode::AMyGameMode(const FObjectInitializer& ObjectInitializer) {
+		PlayerControllerClass = AStrategyPlayerController::StaticClass();
+		SpectatorClass = AStrategySpectatorPawn::StaticClass();
+		DefaultPawnClass = AStrategySpectatorPawn::StaticClass();
+		GameStateClass = AStrategyGameState::StaticClass();
+		HUDClass = AStrategyHUD::StaticClass();
+	}
+}}}

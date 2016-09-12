@@ -8,10 +8,50 @@
 
 
 
+= FVector =
+* 静态类
+{{{class="brush:c++"
+	// (0,0,0)
+	FVector::ZeroVector
+	// (1,0,0)
+	FVector::ForwardVector
+	// (0,0,1)
+	FVector::UpVector
+	// (0,1,0)
+	FVector::RightVector
+}}}
 
 
 * clamp 
 {{{class="brush:c++"
 	// clamp XYZ below max size
 	FVector GetClampedToMaxSize(float maxSize) const; 
+}}}
+
+* 标准化，点积，叉积
+{{{class="brush:c++"
+	FVector(1,1,0).GetSafeNormal();
+	FVector::CrossProduct(FVector v1, FVector v2);
+	FVector::DotProduct(FVector v1, FVector v2);
+}}}
+
+= FPlane =
+* 初始化
+{{{class="brush:c++"
+	// 点法式
+	FPlane(FVector OriginPoint, FVector Direction)
+}}}
+
+* 根据平面MyPanel得到该平面的原点PlaneOrigin和法线PlaneNormal
+http://www.cnblogs.com/graphics/archive/2009/10/17/1585281.html
+{{{class="brush:c++"
+	const FVector PlaneNormal = FVector(MyPlane.X, MyPlane.Y, MyPlane.Z);
+	const FVector PlaneOrigin = PlaneNormal * MyPlane.W;
+}}}
+
+* 求射线MyRay与平面MyPlane交点坐标
+http://www.cnblogs.com/graphics/archive/2009/10/17/1585281.html
+{{{class="brush:c++"
+	FVector Distance = FVector::DotProduct(PlaneNormal, (PlaneOrigin - RayOrigin)) / FVector::DotProduct(PlaneNormal, RayDirect);
+	return RayOrigin + RayDirection * Distance;
 }}}

@@ -6,10 +6,21 @@
 
 
 
-* from HUD
+* get Character from HUD
 {{{class = "brush:c++"
 	AMyCharacter aMyChar = Cast<AMyCharacter>PlayerOwner->GetCharacter();
-	if (aMyChar) {
-
-	}
 }}}
+
+* get PlayerController from Component
+{{{class = "brush:c++"
+	AMyPlayerController* PlayerController = NULL;
+	APawn* Owner = Cast<APawn>(GetOwner());
+	PlayerController = Cast<APlayerController>(Owner->GetController());
+	return PlayerController;
+}}}
+
+* get GameState from Component
+{{{class = "brush:c++"
+	AMyGameState const* const GameState = GetWorld()->GetGameState<AStrategyGameState>();
+}}}
+

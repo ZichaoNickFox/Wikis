@@ -1,0 +1,10 @@
+
+
+
+
+
+
+
+
+
+* pawn自带collisionComponent, 

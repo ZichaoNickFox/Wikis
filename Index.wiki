@@ -7,9 +7,10 @@
 # [[codeSnippets/math|math]]
 # [[codeSnippets/InputBinding|InputBinding]]
 # [[codeSnippets/Camera|Camera]]
+# [[codeSnippets/Pawn|Pawn]]
 # [[codeSnippets/PawnMovementComponent|PawnMovementComponent]]
 # [[codeSnippets/Movement Rotation and Scale|Movement Rotation and Scale]]
-# [[codeSnippets/FVector|FVector]]
+# [[codeSnippets/FVector|FVector FPlane]]
 # [[codeSnippets/GameMode|GameMode]]
 # [[codeSnippets/String and Log|String and Log]]
 # [[codeSnippets/Color|Color]]
@@ -41,12 +42,14 @@
 = 3d math =
 # [[3dMath/coordinator|坐标系]]
 # [[3dMath/Transform|变换]]
+# [[3dMath/Quat|Quat四元数]]
 
 = 3d Engine =
 * 从零实现3d引擎http://blog.csdn.net/cppyin/article/
 
 = ideas =
 # [[ideas/how to learn|如何学习]]
+# [[ideas/Data Driving and OOP|Data Driving and OOP]]
 
 = vim =
 # [[vim/operations|常用易忘操作]]
