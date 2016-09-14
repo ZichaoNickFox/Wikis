@@ -7,7 +7,15 @@
 
 
 
+* 从Play开始的，计算暂停，时间加快，时间减慢的时间
+{{{class = "brush:c++"
+	GetWorld()->GetTimeSeconds();
+}}}
 
+* 从Play开始的，不计算暂停，时间加快，时间减慢的时间
+{{{class = "brush:c++"
+	GetWorld()->GetRealTimeSeconds();
+}}}
 
 * register and unregister timer 
 倒计时案例

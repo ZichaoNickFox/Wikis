@@ -4,7 +4,7 @@
 
 
 
-
+= Camera =
 * set camera to non-character actors 
 {{{class="brush: c++"
 	// get player controller:
@@ -73,5 +73,15 @@
 	}
 }}}
 
-* Movement camera
-* 
+
+= Viewport =
+* 得到视口尺寸CurrentViewportSize
+{{{class="brush:c++"
+	ULocalPlayer* const LocalPlayer = Cast<ULocalPlayer>(PlayerController->Player);
+	if (LocalPlayer == NULL || LocalPlayer->ViewportClient == NULL) {
+		return;
+	}
+	FVector2D CurrentViewportSize;
+	LocalPlayer->ViewportClient->GetViewportSize(CurrentViewportSize);
+}}}
+

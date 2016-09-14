@@ -5,26 +5,68 @@
 
 
 
-GENERATED_BODY会自动生成构造函数MyClass::MyClass(const FObjectInitializer& ObjectInitializer):Super(ObjectInitilizer){}
-GENERATED_UINTERFACE_BODY()不会自动生成构造函数，需要自己写
-GENERATED_UCLASS_BODY()不会自动生成构造函数，需要自己写
 
-* class
+= class =
+GENERATED_BODY会自动生成构造函数MyClass::MyClass(const FObjectInitializer& ObjectInitializer):Super(ObjectInitilizer){}
+GENERATED_UCLASS_BODY()不会自动生成构造函数，需要自己写
 {{{class="brush: c++"
+	UCLASS()
 	class MyActor : public AActor{
-		GENERATED_UCLASS_BODY()
+		GENERATED_UCLASS_BODY()	// 没有;
 	};
 	MyActor::MyActor(const FObjectInitilizer& objectInitializer) {
 		PrimaryActorTick.bCanEverTick = true;
 	}
 }}}
 
-* interface
+= interface =
+GENERATED_UINTERFACE_BODY()不会自动生成构造函数，需要自己写
+先用类生成器生成继承Object的类
+* 接口类
 {{{class="brush: c++"
+	UINTERFACE()
 	class UMyInterface : public UInterface {
-		GENERATED_UINTERFACE_BODY()
+		GENERATED_UINTERFACE_BODY()	// 没有;
+		
+		// 这里什么都不写
 	}
 	class IMyInterface {
-		GENERATED_IINTERFACE_BODY()
+		GENERATED_IINTERFACE_BODY() // 没有;
+		
+		// 这里写所有的接口
+		
+		// 接口函数的第一种写法
+		UFUNCTION(BlueprintNativeEvent)
+		void MyInterface();
+		
+		// 接口函数的第二种写法
+		virtual void MyInterface2() = 0;
+	}
+	// 在cpp中写UInterface的构造函数
+	UMyInterface::UMyInterface(const FObjectInitializer& ObjectInitializer)
+		: Super(ObjectInitializer) {
+
+	}
+}}}
+
+* 实现接口的类
+{{{class= "brush:c++"
+	UCLASS()
+	class AMyClass : public IMyInterface {
+		GENERATED_BODY()
+		
+		// 实现第一种接口函数，接口类不是virtual函数的，需要加_Implementation进行实现，注意实现接口类的实现函数都是virtual的
+		virtual void MyInterface_Implementation() override;
+		
+		// 实现第二种接口函数
+		virtual void MyInterface2() override;
+	}
+	
+	void AMyClass::MyInterface_Implementation() {
+
+	}
+	
+	void AMyClass::MyInterface2() {
+
 	}
 }}}

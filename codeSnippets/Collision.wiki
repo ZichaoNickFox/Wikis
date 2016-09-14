@@ -3,7 +3,7 @@
 
 
 
-
+= collision =
 * collision profile principle
 {{https://www.unrealengine.com/blog/collision-filtering}}
 1、碰撞分为3种：ignore, overlap, block，草对于子弹是ignore，对于visibility是block各种volumn对于物体是overlap的
@@ -48,3 +48,24 @@ MyCollisionComponent->BodyInstace.SetCollisionProfileName(TEXT("Projectile"));
 		}
 	}
 }}}
+
+* USphereComponent
+{{{class="brush: c++"
+	USphereComponent* sphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("RootComponent"));
+	//RootComponent = sphereComponent;
+	sphereComponent->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::KeepRelativeTransform)
+	sphereComponent->SetSphereRadius(40.0f);
+	sphereComponent->SetCollisionProfileName("Pawn");
+}}}
+
+= FBox =
+FBox就是AABB盒
+
+* 初始化
+{{{class="brush:c++"
+	// 用三个点的坐标和参数3进行初始化	
+	FBox(const FVector* Points, int32 Count)
+	// 用最小顶点坐标和最大顶点坐标初始化
+	FBox(FVector Min, FVector Max)
+}}}
+

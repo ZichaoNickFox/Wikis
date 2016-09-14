@@ -1,0 +1,19 @@
+
+
+
+
+= c++ 数组 =
+{{{class = "brush:c++"
+	// 求长度
+	FVector Touches[EKeys::NUM_TOUCH_KEYS];
+	uint32 Len = ARRAY_COUNT(Touches);
+
+}}}
+
+= TArray =
+初始化
+{{{class="brush:c++"
+	// 添加10个空项
+	TArray<Data> MyArray;
+	MyArray.AddZeroed(10);
+}}}

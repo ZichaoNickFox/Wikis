@@ -29,6 +29,8 @@
 }}}
 
 * 标准化，点积，叉积
+左手坐标系叉积满足左手法则
+右手坐标系叉积满足右手法则
 {{{class="brush:c++"
 	FVector(1,1,0).GetSafeNormal();
 	FVector::CrossProduct(FVector v1, FVector v2);

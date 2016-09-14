@@ -5,22 +5,26 @@
 
 
 
+= GameState =
+* from Component
+{{{class = "brush:c++"
+	AMyGameState const* const GameState = GetWorld()->GetGameState<AStrategyGameState>();
+}}}
 
-* get Character from HUD
+
+= Character =
+* from HUD
 {{{class = "brush:c++"
 	AMyCharacter aMyChar = Cast<AMyCharacter>PlayerOwner->GetCharacter();
 }}}
 
-* get PlayerController from Component
+
+= PlayerController =
+* from Component
 {{{class = "brush:c++"
 	AMyPlayerController* PlayerController = NULL;
 	APawn* Owner = Cast<APawn>(GetOwner());
 	PlayerController = Cast<APlayerController>(Owner->GetController());
 	return PlayerController;
-}}}
-
-* get GameState from Component
-{{{class = "brush:c++"
-	AMyGameState const* const GameState = GetWorld()->GetGameState<AStrategyGameState>();
 }}}
 

@@ -6,14 +6,6 @@
 
 
 = Add Component =
-* collision component normal setting
-{{{class="brush: c++"
-	USphereComponent* sphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("RootComponent"));
-	//RootComponent = sphereComponent;
-	sphereComponent->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::KeepRelativeTransform)
-	sphereComponent->SetSphereRadius(40.0f);
-	sphereComponent->SetCollisionProfileName("Pawn");
-}}}
 	
 * staticMesh component normal setting	
 {{{class="brush: c++"
@@ -28,42 +20,6 @@
 	}
 }}}
 
-* particleSystem component normal setting
-{{{class="brush: c++"
-	// particle system
-	OurParticleSystem = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Movement particles"));
-	OurParticleSystem->SetupAttachment(staticMeshComponent);
-	OurParticleSystem->bAutoActivate = false;
-	OurParticleSystem->SetRelativeLocation(FVector(-20, 0, 20));
-	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleAsset(TEXT("/Game/StarterContent/Particles/P_Fire.P_Fire"));
-	if (ParticleAsset.Succeeded()) {
-		OurParticleSystem->SetTemplate(ParticleAsset.Object);
-	}
-}}}
-
-* springArm component normal setting
-{{{class="brush: c++"
-	// spring arm
-	USpringArmComponent* springArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraAttachmentArm"));
-	springArm->SetupAttachment(RootComponent);
-	springArm->RelativeRotation = FRotator(-45, 0, 0);
-	springArm->TargetArmLength = 400;
-	springArm->bEnableCameraLag = true;
-	springArm->CameraLagSpeed = 3;
-	
-	// camera
-	UCameraComponent* camera = CreateDefaultSubobject<UCameraComponent>(TEXT("ActualCamera"));
-	camera->SetupAttachment(springArm, USpringArmComponent::SocketName);
-}}}
-
-* movement component normal setting
-[[PawnMovementComponent]]
-{{{class="brush: c++"
-	OurMovementComponent = CreateDefaultSubobject<UCollidingPawnMovementComponent>(TEXT("CustomMovementComponent"));
-	// set controll which component to move
-	OurMovementComponent->UpdatedComponent = RootComponent;
-	OurMovementComponent->SetupAttachment(RootComponent);
-}}}
 
 
 = Get Component =

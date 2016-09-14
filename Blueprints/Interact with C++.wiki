@@ -5,9 +5,22 @@
 
 
 
+= UCLASS =
+class 修饰符
+https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Classes/Specifiers/index.html
+只要是UCLASS，在unreal类向导中就有了
 
+= USTRUCT =
+struct 修饰符
+https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Structs/Specifiers/index.html
 
+= UINTERFACE =
+interface 修饰符
+https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Interfaces/Specifiers/index.html
 
+= UFUNCTION =
+function 修饰符
+https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Functions/Specifiers/index.html
 * UFUNCTION(BlueprintNativeEvent) 
 	* 与BlueprintImplementableEvent的不同在于c++端有默认实现
 	* in c++
@@ -27,9 +40,6 @@
 }}}
 	* in blueprint
 	{{file:BlueprintNativeEvent.png}}
-	
-
-
 
 * UFUNTION(BlueprintImplementableEvent)
 	* 与BlueprintNativeEvent的不同在于c++端没有默认实现
@@ -47,3 +57,11 @@
 	* in blueprint
 	{{file:BlueprintImplementableEvent.png}}
 
+= UPROPERTY =
+property 修饰符
+https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Properties/Specifiers/index.html
+只有组件中某个字段加上UPROPERTY不能在Editor中编辑。只有组件本身加上UPROPERTY后才可以在Editor中编辑
+
+= Metadata =
+Metadata 修饰符
+https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Metadata/index.html

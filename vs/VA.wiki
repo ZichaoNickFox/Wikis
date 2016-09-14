@@ -1,0 +1,10 @@
+
+
+
+
+
+
+
+* 禁用Intelisense
+https://support.wholetomato.com/default.asp?W133
+并且在Tools->Options->c++->高级中禁用Intelisense，禁用数据库，等等导致慢的选项
