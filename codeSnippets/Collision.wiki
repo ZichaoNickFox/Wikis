@@ -58,6 +58,18 @@ MyCollisionComponent->BodyInstace.SetCollisionProfileName(TEXT("Projectile"));
 	sphereComponent->SetCollisionProfileName("Pawn");
 }}}
 
+= Trace =
+{{{class="brush:c++"
+	FHitResult Hit;
+	FCollisionObjectQueryParams ObjectParams(FCollisionObjectQueryParams::AllStaticObjects);
+	GetWorld->LineTraceSingleByObjectType(Hit, FromLocation, ToLocation, ObjectParams);
+	// Hit.Actor是个TWeakObectPtr<>，非空证明发生了碰撞。用IsValid判断Hit.Actor非空
+	if (Hit.Actor.IsValid()) {
+		// 说明碰撞了
+	}
+}}}
+
+
 = FBox =
 FBox就是AABB盒
 

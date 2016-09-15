@@ -65,3 +65,9 @@ https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Referenc
 = Metadata =
 Metadata 修饰符
 https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Metadata/index.html
+
+* DisplayName
+如下边函数，原函数叫SetBuffModifier，用meta=(DisplayName = "Set Unit Properties")将蓝图中该函数名称改为"Set Unit Properties"
+	UFUNCTION(BlueprintCallable, Category=Pawn, meta=(DisplayName = "Set Unit Properties"))
+	void SetBuffModifier(AStrategyChar* Pawn, int32 AttackMin, int32 AttackMax, int32 DamageReduction, int32 MaxHealthBonus, int32 HealthRegen, float Speed, int32 DrunkLevel, float Duration, bool bInfiniteDuration, float CustomScale = 1.0, float AnimaRate = 1);
+

@@ -3,7 +3,7 @@
 
 
 
-= Movement =
+= Location =
 * 在初始化时设置USceneComponent的Loaction
 {{{class="brush:c++"
 	SceneComponent->SetRelativeLocation(FVector(200f, 200f, 200f));
@@ -39,7 +39,8 @@
 	}
 }}}
 
-
+* GetActorLocation
+这个函数返回RootComponent的世界坐标
 
 = Rotation =
 * 初始化时设置USceneConponent的Rotation

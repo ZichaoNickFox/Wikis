@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+
+
+* TWeakObjectPtr<>
+{{{class = "brush:c++"
+	TWeakObjectPtr<AMyActor> MyActor;
+	
+	// 判断是否为空（野）指针
+	MyActor.IsValid();
+}}}

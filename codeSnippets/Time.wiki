@@ -48,3 +48,8 @@
 		GetWorldTimerManager().ClearTimer(CountdownTimerHandler);
 	}
 }}}
+
+* 动画播放速度 
+{{{class = "brush:c++"
+	SKeletalMeshComponent.GlobalAnimRateScale = .5f;
+}}}

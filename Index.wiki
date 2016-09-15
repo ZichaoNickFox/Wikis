@@ -12,12 +12,11 @@
 # [[codeSnippets/Movement Rotation and Scale|Movement Rotation and Scale]]
 # [[codeSnippets/FVector|FVector FPlane]]
 # [[codeSnippets/GameMode|GameMode]]
-# [[codeSnippets/String and Log|String and Log]]
-# [[codeSnippets/Color|Color DrawDebugLine]]
+# [[codeSnippets/String and Log|String Log Debug Color]]
 # [[codeSnippets/Character|Character]]
 # [[codeSnippets/Spawn|Spawn]]
 # [[codeSnippets/Destroy|Destroy]]
-# [[codeSnippets/Collision|Collision FBox]]
+# [[codeSnippets/Collision|Collision Trace FBox]]
 # [[codeSnippets/HUD|HUD]]
 # [[codeSnippets/Slate|Slate]]
 # [[codeSnippets/UMG|UMG]]
@@ -31,6 +30,8 @@
 # [[codeSnippets/ParticleSystem|ParticleSystem]]
 # [[codeSnippets/Damage|Damage]]
 # [[codeSnippets/Assert|Assert]]
+# [[codeSnippets/SmartPointer|SmartPointer]]
+# [[codeSnippets/AI|AI Sensing]]
 
 == Blueprints ==
 # [[Blueprints/Animation and StateMachine|Animation and StateMachine]]
@@ -45,6 +46,7 @@
 = c++ =
 # [[c++/mutable|mutable]]
 # [[c++/pointer|pointer]]
+# [[C++/inline|inline]]
 
 = 3d math =
 # [[3dMath/coordinator|坐标系]]
@@ -57,6 +59,7 @@
 = ideas =
 # [[ideas/how to learn|如何学习]]
 # [[ideas/Data Driving and OOP|Data Driving and OOP]]
+# [[ideas/Data or Function|Data or Function]]
 
 = vim =
 # [[vim/operations|常用易忘操作]]

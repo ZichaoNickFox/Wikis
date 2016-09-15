@@ -47,3 +47,47 @@ https://wiki.unrealengine.com/String_Conversions:_FString_to_FName,_FString_to_I
 {{{class = "brush:c++"
 	FText::FromtString(TEXT("xxx"));
 }}}
+
+
+= FColor =
+{{{class="brush:c++"
+	FColor::Yellow
+	FColor(255,0,0);
+}}}
+
+= Debug =
+* DrawDebug Function
+{{{class="brush:c++"
+	// 画线
+	DrawDebugLine(
+		GetWorld(),
+		StartFVector,
+		EndFVector,
+		FColor::Yellow,
+		bPersistant = false,
+		fLifeTime = -1,
+		uint8DepthProperty = 0,
+		Thickness = 0
+	)
+	
+	// 画点
+	// 第三个参数是尺寸，大了的话，是方形了
+	DrawDebugPoint(
+		GetWorld(),
+		InPlayerController->GetFocalLocation(),
+		20,
+		FColor::Red,
+		true
+	);
+	
+	// 画有向箭头
+	// 第四个参数是射线箭头的尺寸
+	DrawDebugDirectionalArrow(
+		GetWorld(),
+		WorldBoundPoints[0],
+		FrustumRays[0] * 30000 + WorldBoundPoints[0],
+		5,
+		FColor::Green,
+		true
+		);
+}}}
