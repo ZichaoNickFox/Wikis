@@ -1,9 +1,31 @@
+= Contents =
+    - [[#概述|概述]]
+    - [[#Spawn|Spawn]]
+    - [[#设置Controller|设置Controller]]
+    - [[#Movement|Movement]]
+    - [[#Rotation|Rotation]]
+    - [[#Jump|Jump]]
 
 
+= 概述 =
+自带四个组件：
+USkeletalMeshComponent* GetMesh() const;
+UArrowComponent* GetArrowComponent() const;
+[[UCharacterMovementComponent]]* GetCharacterMovement() const;
+UCapsuleComponent* GetCapsuleComponent() const;
 
+= Spawn =
+[[Spawn]]
 
+= 设置Controller =
+一般在Spawn之后设置PawnController
+之前必须先设置了Pawn里边的AIControllerClass
+执行SpawnDefaultController时，会自己生成一个AIControllerClass的Controller，并调用Controller的Possess方法
+{{{class="brush:c++"
+	Char->SpawnDefaultController();
+}}}
 
-* Movement
+= Movement =
 {{{class="brush:c++"
 void AMyCharacter::MoveForward(float AxisValue) {
 	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
@@ -16,7 +38,7 @@ void AMyCharacter::MoveRight(float AxisValue) {
 }
 }}}
 
-* Rotation
+= Rotation =
 {{{class="brush:c++"
 	// approach1: bind to pawn build-in functions
 	void AMyPawn::SetupPlayerInputComponent(class UInputComponent* InputComponent) {
@@ -25,7 +47,7 @@ void AMyCharacter::MoveRight(float AxisValue) {
 	}		
 }}}
 
-* Jump
+= Jump =
 {{{class="brush:c++"
 	// approatch1 : bind to character build-in value
 	void AMyCharacter::SetupPlayerInputComponent(class UInputComponent* InputComponent) {

@@ -1,4 +1,9 @@
 
+= Contents =
+    - [[#GameState|GameState]]
+    - [[#Character|Character]]
+    - [[#PlayerController|PlayerController]]
+    - [[#GameMode|GameMode]]
 
 
 
@@ -26,5 +31,14 @@
 	APawn* Owner = Cast<APawn>(GetOwner());
 	PlayerController = Cast<APlayerController>(Owner->GetController());
 	return PlayerController;
+}}}
+
+= GameMode =
+{{{class = "brush:c++"
+	// 必须是Server才能这么得到
+	AMyGameMode* GameMode = GetWorld()->GetAuthGameMode();
+	
+	// 也是调用上边一个函数
+	AMyGameMode* GameMode = UGameplayStatic::GetGameMode();
 }}}
 

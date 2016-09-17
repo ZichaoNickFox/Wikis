@@ -1,8 +1,12 @@
-
-
-
-
-
+= Contents =
+    - [[#class|class]]
+    - [[#interface|interface]]
+        - [[#interface#Interface的用法思想|Interface的用法思想]]
+        - [[#interface#接口类|接口类]]
+        - [[#interface#实现接口的类|实现接口的类]]
+    - [[#Enum|Enum]]
+        - [[#Enum#写法1|写法1]]
+        - [[#Enum#写法2|写法2]]
 
 
 
@@ -20,9 +24,22 @@ GENERATED_UCLASS_BODY()不会自动生成构造函数，需要自己写
 }}}
 
 = interface =
+== Interface的用法思想 ==
+下边这段程序，是运行时多态。AActor本身没有继承IStrategyTeamInterface接口，但传进来的参数可能会继承这个接口。
+{{{class="brush: c++"
+	bool AStrategyGameMode::OnEnemyTeam(const AActor* A, const AActor* B) {
+		// 注意这里必须是const，const基类转化const父类
+		const IStrategyTeamInterface* TeamA = Cast<const IStrategyTeamInterface>(A);
+		const IStrategyTeamInterface* TeamB = Cast<const IStrategyTeamInterface>(B);
+		
+		return TeamA && TeamB && TeamA->GetTeamNum() != TeamB->GetTeamNum();
+	}
+}}}
+
+ 
 GENERATED_UINTERFACE_BODY()不会自动生成构造函数，需要自己写
 先用类生成器生成继承Object的类
-* 接口类
+== 接口类 ==
 {{{class="brush: c++"
 	UINTERFACE()
 	class UMyInterface : public UInterface {
@@ -49,7 +66,7 @@ GENERATED_UINTERFACE_BODY()不会自动生成构造函数，需要自己写
 	}
 }}}
 
-* 实现接口的类
+== 实现接口的类 ==
 {{{class= "brush:c++"
 	UCLASS()
 	class AMyClass : public IMyInterface {
@@ -69,4 +86,41 @@ GENERATED_UINTERFACE_BODY()不会自动生成构造函数，需要自己写
 	void AMyClass::MyInterface2() {
 
 	}
+}}}
+
+= Enum =
+== 写法1 ==
+{{{class= "brush:c++"
+	// 定义
+	ENUM(BlueprintType)
+	namespace EMyEnum {
+		enum Type {
+			Type1,
+			Type2,
+			Type3,
+		}
+	}
+	
+	// 使用
+	EMyEnum Type = EMyEnum::Type1;
+	
+	// 蓝图化，在蓝图中会出现枚举的下拉选框
+	UPROPERTY(EditAnywhere)
+	TEnumAsByte<EMyEnum::Type> EnumType;
+}}}
+
+== 写法2 ==
+{{{class= "brush:c++"
+	// 定义
+	ENUM(BlueprintType)
+	enum EMoveMode {
+		MOVE_Walking UMETA(DisplayName="Walking");
+	}
+	// 使用
+	EMoveMode Type = MOVE_Walking;
+	
+	// 蓝图化，在蓝图中会出现枚举的下拉选框
+	// 下拉选框的文字会自动会使用UMETA(DisplayName = "xxx")的
+	UPROPERTY(EditAnywhere)
+	TEnumAsByte<EMoveMode> MoveType;
 }}}

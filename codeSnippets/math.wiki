@@ -1,3 +1,7 @@
+= Contents =
+    - [[#random|random]]
+    - [[#clamp|clamp]]
+    - [[#lerp|lerp]]
 
 
 
@@ -5,8 +9,7 @@
 
 
 
-
-* random
+= random =
 {{{class="brush:c++"
 	// random r: r >= min and r <= max
 	FMath::RandRange(int32 min, int32 max);
@@ -14,7 +17,7 @@
 }}}
 
 
-* clamp
+= clamp =
 {{{class="brush:c++"
 	// if value < min then value = min
 	// if value > max then value = max
@@ -25,7 +28,7 @@
 	FMath::Clamp<float>(zoomFector, 0.0f, 1.0f);
 }}}
 
-* lerp
+= lerp =
 {{{class="brush:c++"
 	float zoomFector = 2.0f;
 	zoomFector = FMath::Clamp<float>(zoomFector, 0.0f, 1.0f);

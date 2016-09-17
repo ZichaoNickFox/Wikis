@@ -1,4 +1,11 @@
 
+= Contents =
+    - [[#UCLASS|UCLASS]]
+    - [[#USTRUCT|USTRUCT]]
+    - [[#UINTERFACE|UINTERFACE]]
+    - [[#UFUNCTION|UFUNCTION]]
+    - [[#UPROPERTY|UPROPERTY]]
+    - [[#Metadata|Metadata]]
 
 
 
@@ -61,6 +68,10 @@ https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Referenc
 property 修饰符
 https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Properties/Specifiers/index.html
 只有组件中某个字段加上UPROPERTY不能在Editor中编辑。只有组件本身加上UPROPERTY后才可以在Editor中编辑
+# 编辑位置
+	* EditDefaultsOnly 只有原型
+	* EditInstanceOnly 只有实例
+	* EditAnywhere 原型和实例
 
 = Metadata =
 Metadata 修饰符

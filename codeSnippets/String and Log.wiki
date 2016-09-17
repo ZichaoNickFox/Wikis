@@ -1,4 +1,12 @@
-
+= Contents =
+    - [[#Log|Log]]
+        - [[#Log#打印在屏幕|打印在屏幕]]
+        - [[#Log#打印在log中|打印在log中]]
+        - [[#Log#设置log category|设置log category]]
+    - [[#FString|FString]]
+    - [[#FText|FText]]
+    - [[#FColor|FColor]]
+    - [[#Debug|Debug]]
 
 
 
@@ -6,7 +14,7 @@
 
 
 = Log =
-* print to screen
+== 打印在屏幕 ==
 先打印出来的在下边
 {{{class = "brush:c++"
 	// no formated on screen log
@@ -17,7 +25,7 @@
 }}}
 
 
-* print to Output Log 
+== 打印在log中 == 
 https://wiki.unrealengine.com/Logs,_Printing_Messages_To_Yourself_During_Runtime#Log_formatting
 {{{class = "brush:c++"
 	// log FString
@@ -26,6 +34,22 @@ https://wiki.unrealengine.com/Logs,_Printing_Messages_To_Yourself_During_Runtime
 	
 	// log int
 	UE_LOG(LogTemp, Warning, TEXT("%d"), 200);
+}}}
+
+== 设置log category ==
+可以设置在YouGame.h，YouGame.cpp中，以便所有地方打log时都能用
+也可以设置在定制的.h .cpp中，以便包含了这个头文件的文件打log时能用
+.h
+{{{class = "brush:c++"
+	DECLARE_LOG_CATEGORY_EXTERN(LogInit, Display, All);
+	DECLARE_LOG_CATEGORY_EXTERN(LogAI, Display, All);
+	DECLARE_LOG_CATEGORY_EXTERN(LogFatalError, Display, All);
+}}}
+.cpp
+{{{class = "brush:c++"
+	DECLARE_LOG_CATEGORY(LogInit);
+	DECLARE_LOG_CATEGORY(LogAI);
+	DECLARE_LOG_CATEGORY(LogFatalError);
 }}}
 
 = FString =
