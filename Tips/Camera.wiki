@@ -80,11 +80,16 @@
 = Viewport =
 * 得到视口尺寸CurrentViewportSize
 {{{class="brush:c++"
+	// 方法1
 	ULocalPlayer* const LocalPlayer = Cast<ULocalPlayer>(PlayerController->Player);
 	if (LocalPlayer == NULL || LocalPlayer->ViewportClient == NULL) {
 		return;
 	}
 	FVector2D CurrentViewportSize;
 	LocalPlayer->ViewportClient->GetViewportSize(CurrentViewportSize);
+	
+	// 方法2
+	FVector2D ViewportSize;
+	GEngine->GameViewport->GetViewSize(ViewportSize);
 }}}
 
