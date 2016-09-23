@@ -54,7 +54,7 @@
 # [[AI/AIController|AIController]]
  
 == Blueprints ==
-# [[Blueprints/Animation and StateMachine|Animation and StateMachine]]
+# [[Blueprints/Animation and StateMachine|Animation StateMachine]]
 # [[Blueprints/Interact with C++|UCLASS USTRUCT UINTERFACE UFUNCTION UPROPERTY Metadata]]
 
 == FPS game ==
