@@ -109,10 +109,13 @@ def removeMd(path, file, ext):
         os.remove(joinPathFileExt(path, file, ext))
 
 def removewiki(path, file, ext):
-    if ext == "wiki":
+    if ext == "wiki" or ext == "wiki~":
         os.remove(joinPathFileExt(path, file, ext))
 
 def writeMd(path, file):
+    print(path)
+    print(file)
+    print(1111111)
     assert(os.path.exists(joinPathFileExt(path, file, "md")))
     assert(os.path.exists(joinPathFileExt(path, file, "wiki")))
     fileWiki = open(joinPathFileExt(path, file, "wiki"), "r")
@@ -128,6 +131,7 @@ def TravelHandle(path, file, ext):
     removeMd(path, file, ext)
     createMd(path, file, ext)
     writeMd(path, file)
+    removeWiki(path, file, ext)
     pass
 
 #递归遍历文件
