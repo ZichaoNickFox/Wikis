@@ -65,3 +65,4 @@ file_regex example
 1. 优化easymotion扩展到两个字母
 1. 找到相对行的插件
 1. 将shift+backspace绑定为delete
+1. 命令模式中的H，当作为r或f的第二个命令参数时，不进行Pane切换
