@@ -1,3 +1,4 @@
+﻿
 
 
 
@@ -7,9 +8,7 @@
 
 
 
+1. [如何学习](HowToLearn.md)
+1. [Data Driving and OOP](DataDrivingAndOOP.md)
+1. [Data or Function](DataOrFunction.md)
 
-
-
-1. [如何学习](ideas/how to learn.md)
-1. [Data Driving and OOP](ideas/Data Driving and OOP.md)
-1. [Data or Function](ideas/Data or Function.md)

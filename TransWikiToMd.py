@@ -108,26 +108,25 @@ def removeMd(path, file, ext):
     if ext == "md":
         os.remove(joinPathFileExt(path, file, ext))
 
-def removewiki(path, file, ext):
+def removeWiki(path, file, ext):
     if ext == "wiki" or ext == "wiki~":
         os.remove(joinPathFileExt(path, file, ext))
 
 def writeMd(path, file):
-    print(path)
-    print(file)
-    print(1111111)
-    assert(os.path.exists(joinPathFileExt(path, file, "md")))
-    assert(os.path.exists(joinPathFileExt(path, file, "wiki")))
-    fileWiki = open(joinPathFileExt(path, file, "wiki"), "r")
-    fileMd = open(joinPathFileExt(path, file, "md"), "w")
-    for line in fileWiki:
-        line = HandleLine(line)
-        fileMd.write(line + "\n")
-    fileWiki.close()
-    fileMd.close()
+    if os.path.exists(joinPathFileExt(path, file, "wiki")) == True:
+        assert(os.path.exists(joinPathFileExt(path, file, "md")))
+        fileWiki = open(joinPathFileExt(path, file, "wiki"), "r")
+        fileMd = open(joinPathFileExt(path, file, "md"), "w")
+        for line in fileWiki:
+            line = HandleLine(line)
+            fileMd.write(line + "\n")
+        fileWiki.close()
+        fileMd.close()
 
 #递归文件的回调，会传回来：文件名+扩展名，路径
 def TravelHandle(path, file, ext):
+    global isInContentParam
+    isInContentParam= False
     removeMd(path, file, ext)
     createMd(path, file, ext)
     writeMd(path, file)
@@ -151,5 +150,4 @@ def RecursiveTravelDir(path, call):
             call(path, fileName, fileExt)
 
 
-isInContentParam= False
 RecursiveTravelDir(path = ".", call = TravelHandle)
