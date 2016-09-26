@@ -19,3 +19,4 @@
 [Ideas](Ideas/Ideas.md)
 [Python](Python/Python.md)
 [Sublime](Sublime/Sublime.md)
+[Vim](Vim/Vim.md)

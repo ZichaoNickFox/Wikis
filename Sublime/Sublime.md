@@ -5,6 +5,8 @@
 - build system
 - key binding and context and scope
 - console
+- vintageous
+- theme
 - TODO
 
 <!-- /MarkdownTOC -->
@@ -45,7 +47,7 @@ file_regex example
 
 
 # key binding and context and scope
-[unofficial document](http://docs.sublimetext.info/en/latest/customization/key_bindings.html)
+[sublime自带的context](http://docs.sublimetext.info/en/latest/reference/key_bindings.html)
 [特定类型文件的绑定](https://forum.sublimetext.com/t/file-type-specific-key-bindings/2839/3)
 [特定类型文件的确定](https://forum.sublimetext.com/t/selector-on-a-keybind/3785/3)
 [binding keys](http://sublimetext.info/docs/en/reference/key_bindings.html)
@@ -56,13 +58,22 @@ file_regex example
 [在console中执行命令](http://docs.sublimetext.info/en/latest/extensibility/commands.html?highlight=console)
 
 
+# vintageous
+[vintageouse 命令，状态等等](http://nullege.com/codes/search/Vintageous)
+
+# theme
+[全面的介绍](http://docs.sublimetext.info/en/latest/reference/color_schemes.html?highlight=theme)
+[betterFindBuffer 背景渲染BFBForceColorSchemeCommand](https://github.com/aziz/BetterFindBuffer/blob/master/find_results.py)
+
 
 #TODO
 1. 找到build是不显示error的原因
-1. 扩展buidView插件，显示warning为黄色，显示error为红色
+[comment]:<>(1. 扩展buidView插件，显示warning为黄色，显示error为红色)
 1. 扩展openUrl插件，在build output中，找到对应位置。在md相对路径中，打开相对路径文件。
 1. 优化markdowneditor, wrap行时，wrap宽度为实际宽度
 1. 优化easymotion扩展到两个字母
 1. 找到相对行的插件
 1. 将shift+backspace绑定为delete
-1. 命令模式中的H，当作为r或f的第二个命令参数时，不进行Pane切换
+1. 命令模式中的H,-等，当作为r或f的第二个命令参数时，不进行Pane切换
+1. vintageous ex-mode中没有:g/^$/d这样的命令
+1. md中n跳转题目

@@ -9,7 +9,7 @@
 
 
 
-1. [mutable](c++/mutable.md)
-1. [pointer](c++/pointer.md)
-1. [inline](C++/inline.md)
-1. [cast](c++/cast.md)
+1. [mutable](Mutable.md)
+1. [pointer](Pointer.md)
+1. [inline](Inline.md)
+1. [cast](Cast.md)
