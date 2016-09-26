@@ -48,6 +48,7 @@ file_regex example
 [unofficial document](http://docs.sublimetext.info/en/latest/customization/key_bindings.html)
 [特定类型文件的绑定](https://forum.sublimetext.com/t/file-type-specific-key-bindings/2839/3)
 [特定类型文件的确定](https://forum.sublimetext.com/t/selector-on-a-keybind/3785/3)
+[binding keys](http://sublimetext.info/docs/en/reference/key_bindings.html)
 终端执行view.run_command("show_scope_name")就可以得到selector
 
 
@@ -63,3 +64,4 @@ file_regex example
 1. 优化markdowneditor, wrap行时，wrap宽度为实际宽度
 1. 优化easymotion扩展到两个字母
 1. 找到相对行的插件
+1. 将shift+backspace绑定为delete
