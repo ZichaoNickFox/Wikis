@@ -7,6 +7,7 @@
 - console
 - vintageous
 - theme
+- settings
 - TODO
 
 <!-- /MarkdownTOC -->
@@ -65,10 +66,11 @@ file_regex example
 [全面的介绍](http://docs.sublimetext.info/en/latest/reference/color_schemes.html?highlight=theme)
 [betterFindBuffer 背景渲染BFBForceColorSchemeCommand](https://github.com/aziz/BetterFindBuffer/blob/master/find_results.py)
 
+#settings
+[Preference.sublime-settings选项](http://docs.sublimetext.info/en/latest/reference/settings.html)
 
 #TODO
 1. 找到build是不显示error的原因
-[comment]:<>(1. 扩展buidView插件，显示warning为黄色，显示error为红色)
 1. 扩展openUrl插件，在build output中，找到对应位置。在md相对路径中，打开相对路径文件。
 1. 优化markdowneditor, wrap行时，wrap宽度为实际宽度
 1. 优化easymotion扩展到两个字母
@@ -77,3 +79,4 @@ file_regex example
 1. 命令模式中的H,-等，当作为r或f的第二个命令参数时，不进行Pane切换
 1. vintageous ex-mode中没有:g/^$/d这样的命令
 1. md中n跳转题目
+可能实现不了1. 扩展buidView插件，显示warning为黄色，显示error为红色
