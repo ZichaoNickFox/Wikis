@@ -6,7 +6,10 @@
 
 
 
+# Blueprint
+[到点执行（闹钟）](https://docs.unrealengine.com/latest/INT/Gameplay/HowTo/UseTimers/Blueprints/)
 
+# C++
 
 * 从Play开始的，计算暂停，时间加快，时间减慢的时间
 ```c++

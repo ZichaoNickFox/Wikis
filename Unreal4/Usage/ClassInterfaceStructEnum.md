@@ -24,6 +24,8 @@ PrimaryActorTick.bCanEverTick = true;
 ```
 
 # interface #
+[蓝图定义Interface](https://docs.unrealengine.com/latest/INT/Engine/Blueprints/UserGuide/Types/Interface/index.html)
+[蓝图实现Interface](https://docs.unrealengine.com/latest/INT/Engine/Blueprints/UserGuide/Types/Interface/UsingInterfaces/index.html)
 ## Interface的用法思想 ##
 下边这段程序，是运行时多态。AActor本身没有继承IStrategyTeamInterface接口，但传进来的参数可能会继承这个接口。
 ```c++

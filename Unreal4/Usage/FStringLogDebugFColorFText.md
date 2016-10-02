@@ -67,6 +67,7 @@ https://wiki.unrealengine.com/String_Conversions:_FString_to_FName,_FString_to_I
 
 
 # FText #
+[介绍 LOCTEXT NSLOCTEXT 转化Conversion 比较Comparison inHUD](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/StringHandling/FText/index.html)
 * 初始化，与FString相同
 ```c++
 FText::FromtString(TEXT("xxx"));

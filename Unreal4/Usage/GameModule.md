@@ -8,8 +8,9 @@
 
 
 # 简介 #
-https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/index.html
+[架构介绍](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/index.html)
 
+[介绍和实例教程](https://docs.unrealengine.com/latest/INT/Programming/Plugins/)
 
 * 创建类时public,private与module的关系
 * 新建c++class时选的public结构、private结构和不选时的结构
@@ -24,3 +25,12 @@ https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Referenc
 
 * Slate Style对GameMode的运用
 [Slate](Slate.md)
+
+
+#Plateform
+[FDesktopPlatformModule API](https://docs.unrealengine.com/latest/INT/API/Developer/DesktopPlatform/FDesktopPlatformModule/index.html)
+[IDesktopPlatform API](https://docs.unrealengine.com/latest/INT/API/Developer/DesktopPlatform/IDesktopPlatform/index.html)
+[FGenericPlatformProcess FWindowsPlatformProcess FLinuxPlatformProcess FMacPlatformProcess](http://docs.unrealengine.com/latest/INT/API/Runtime/Core/GenericPlatform/FGenericPlatformProcess/)
+
+# Build
+[UnrealPak使用方式](https://www.reddit.com/r/unrealengine/comments/3ou66r/using_unrealpak_to_open_pak_files/)
