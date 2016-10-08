@@ -1,21 +1,37 @@
 
 # Usage #
-1. [Class Interface Struct Enum](Usage/ClassInterfaceStructEnum.md)
+1. [Class Interface Struct Enum EventDispatcher](Usage/ClassInterfaceStructEnum.md)
 1. [Component](Usage/Component.md)
 1. [math](Usage/math.md)
 1. [InputBinding](Usage/InputBinding.md)
+
+# Camera
 1. [Camera Viewport](Usage/Camera.md)
+[设置Level的默认Camera](https://docs.unrealengine.com/latest/INT/Gameplay/HowTo/UsingCameras/Blueprints/)
+
+# Character
 1. [Pawn](Usage/Pawn.md)
-1. [PawnMovementComponent](Usage/PawnMovementComponent.md)
+1. [Movement](Usage/PawnMovementComponent.md)
+1. [得到移动方向 计算速度与当前朝向夹角：](https://docs.unrealengine.com/latest/INT/Engine/Animation/AnimHowTo/PropertyBasedBlending/AnimBP/index.html)
+见最后一张图。
+得到移动方向：GetActorRotation
+计算速度与当前朝向夹角：CalculateDirection，输入是Character当前速度和Rotator。会返回-180~180度。左后是-135，左是-90，左前是-45，前是0，右前是45。
+1. animation常用英文：
+crouch蹲着，jog慢跑，prone趴着，ironsight瞄准
+
 1. [Usage/Actor](Usage/Actor.md)
 1. [ActorComponent](Usage/ActorComponent.md)
-1. [Movement Rotation and Scale](Usage/MovementRotationandScale.md)
+1. [Movement Rotation Scale RotatingComponent](Usage/MovementRotationandScale.md)
 1. [FVector FPlane](Usage/FVector.md)
 1. [GameMode GameState GameInstance GetWorldInstances](Usage/GameMode.md)
 1. [FString Log Debug Color FText](Usage/FStringLogDebugFColorFText.md)
 1. [Spawn NewObject](Usage/Spawn.md)
 1. [Destroy](Usage/Destroy.md)
+
+# Collision
+1. [原理概述](https://www.unrealengine.com/blog/collision-filtering)
 1. [Collision Trace FBox](Usage/Collision.md)
+
 1. [HUD UI Slate UMG](Usage/HUD.md)
 1. [Slate](Usage/Slate.md)
 1. [UMG](Usage/UMG.md)
@@ -29,11 +45,24 @@
 1. [Damage](Usage/Damage.md)
 1. [Assert](Usage/Assert.md)
 1. [SmartPointer](Usage/SmartPointer.md)
-1. [Character](Usage/Character.md)
+1. [PlayerCharacter](Usage/PlayerCharacter.md)
 1. [UCharacterMovementComponent](Usage/UCharacterMovementComponent.md)
-1. [Level Blueprint]
-1. [Animation StateMachine](Usage/AnimationandStateMachine.md)
+1. [Level]()
+
+
+#Animation
+1. [FSP状态机案例，5种状态，idle, run, jumpStart, jumpLoop, jumpEnd](https://docs.unrealengine.com/latest/INT/Programming/Tutorials/FirstPersonShooter/4/index.html)
+1. [Blend2D 二维动画混合官方案例](https://docs.unrealengine.com/latest/INT/Engine/Animation/AnimHowTo/PropertyBasedBlending/Setup/index.html)
+1. 设置Character的Animation Blueprint:
+Once you have created the Animation Blueprint that defines the motion of your character, you will need to make sure you assign it to the Anim Blueprint Generated Class property, found under the Mesh Component of the Character Blueprint. 
+
 1. [UCLASS USTRUCT UINTERFACE UFUNCTION UPROPERTY Metadata](Usage/InteractwithC++.md)
+1. [Communication](Usage/Communication.md)
+1. [StaticMesh](Usage/StaticMesh.md)
+
+# fog
+1. [Fog文档](https://docs.unrealengine.com/latest/INT/Engine/Actors/FogEffects/index.html)
+1. [设置默认背景](https://answers.unrealengine.com/questions/116963/how-to-change-the-default-scene-background-color.html)
 
 # AI #
 1. [AI](AI/AI.md)
@@ -49,6 +78,8 @@
 
 # Resource
 1. [支持的图片格式](https://docs.unrealengine.com/latest/INT/Engine/Content/Types/Textures/Importing/index.html)
+1. [载入StarterContent](https://forums.unrealengine.com/showthread.php?64254-How-do-I-add-starter-content-to-a-project-manually)
+1. [使用EngineResourece](https://answers.unrealengine.com/questions/197982/game-and-engine-folder-missing-from-content-browse.html)
 
 # 设计模式 #
 1. [State Pattern](DesignPattern/StatePattern.md)

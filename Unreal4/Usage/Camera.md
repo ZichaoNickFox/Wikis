@@ -8,7 +8,6 @@
 
 
 # Camera #
-[设置Level的默认Camera](https://docs.unrealengine.com/latest/INT/Gameplay/HowTo/UsingCameras/Blueprints/)
 * set camera to non-character actors
 ```c++
 // get player controller:

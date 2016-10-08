@@ -1,18 +1,7 @@
 
-
-
-
-
-
-
-
-
-# 概述 #
-自带四个组件：
-USkeletalMeshComponent* GetMesh() const;
-UArrowComponent* GetArrowComponent() const;
-[UCharacterMovementComponent](UCharacterMovementComponent.md)* GetCharacterMovement() const;
-UCapsuleComponent* GetCapsuleComponent() const;
+# 蓝图
+[Character的常用设置](https://docs.unrealengine.com/latest/INT/Gameplay/HowTo/CharacterMovement/Blueprints/Setup_1/index.html)
+[得到速度](https://answers.unrealengine.com/questions/298098/accessed-none-callfunc-getplayercharacter-returnva-1.html)
 
 # Spawn #
 [Spawn](Spawn.md)

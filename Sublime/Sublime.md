@@ -8,6 +8,8 @@
 - vintageous
 - theme
 - settings
+- find
+- SublimeLinter
 - TODO
 
 <!-- /MarkdownTOC -->
@@ -27,23 +29,14 @@
 # build system
 [unofficial document 中文版](http://sublime-text.readthedocs.io/en/latest/reference/build_systems.html)
 [一个php例子](http://www.cnblogs.com/picaso/p/3337866.html)
+```text
 file_regex example
 "^.+ in (.+) on line ([0-9]+)",
 "^ *\\[javac\\] (.+):([0-9]+):() (.*)$"
-
+```
+```text
 虚幻build命令:E:/Unreal4/Epic Games/4.12/Engine/Binaries/DotNET/UnrealBuildTool.exe StrategyGame Development Win64 -project="D:/Unreal4Projects/StrategyGame/StrategyGame.uproject" -editorrecompile -progress -noubtmakefiles -NoHotReloadFromIDE
-
-1>------ Build started: Project: OfficialGuide, Configuration: Development_Game Win32 ------
-1>  Performing full C++ include scan (building a new target)
-1>  Performing 15 actions (4 in parallel)
-1>  PCH.OfficialGuide.h.cpp
-1>D:\Unreal4Projects\OfficialGuide\Source\OfficialGuide\OfficialGuide.h(8): error C2059: 语法错误:“{”
-1>D:\Unreal4Projects\OfficialGuide\Intermediate\Build\Win32\OfficialGuide\Development\OfficialGuide\PCH.OfficialGuide.h.cpp(1): error C2850: “PCH 头文件”: 只能在文件范围内使用；不能在嵌套结构内使用
-1>ERROR : UBT error : Failed to produce item: D:\Unreal4Projects\OfficialGuide\Binaries\Win32\OfficialGuide.exe
-1>  Total build time: 124.96 seconds
-1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MakeFile.Targets(37,5): error MSB3075: The command ""E:\Unreal4\Epic Games\4.12\Engine\Build\BatchFiles\Build.bat" OfficialGuide Win32 Development "D:\Unreal4Projects\OfficialGuide\OfficialGuide.uproject" -waitmutex" exited with code 5. Please verify that you have sufficient rights to run this command.
-========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
-
+```
 [forum discussion](https://answers.unrealengine.com/questions/92910/is-there-any-way-to-change-the-default-editoride-t.html)
 
 
@@ -68,6 +61,14 @@ file_regex example
 
 #settings
 [Preference.sublime-settings选项](http://docs.sublimetext.info/en/latest/reference/settings.html)
+
+#find
+[设置搜素范围](http://stackoverflow.com/questions/20519040/search-in-all-files-in-a-project-in-sublime-text-3)
+
+#SublimeLinter
+[SublimeLinter文档](http://sublimelinter.readthedocs.io/en/latest)
+[SublimeLinter Settings](http://sublimelinter.readthedocs.io/en/latest/settings.html)
+[SublimeLinter-contrib-cpp]
 
 #TODO
 1. 找到build是不显示error的原因

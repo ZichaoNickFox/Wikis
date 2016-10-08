@@ -9,7 +9,6 @@
 
 # collision #
 * collision profile principle
-{{https://www.unrealengine.com/blog/collision-filtering}}
 1、碰撞分为3种：ignore, overlap, block，草对于子弹是ignore，对于visibility是block各种volumn对于物体是overlap的
 2、traceChannel：比如子弹(weapon)，visibility是两个traceChannel，他们对于草，玻璃和墙的ignore/overlap/block的属性不一样
 objectChannel：比如草和墙就是ObjectChannel，ObjectChannel与ObjectChannel发生的碰撞也有这三种情况
@@ -23,7 +22,8 @@ overlap与除ignore外的所有相撞都是overlap，会发出overlap事件
 ??代码里有句SetCollisionEnabled，类型分：无碰撞、查询碰撞、查询及物理碰撞、物理碰撞四种，指的是啥
 
 * custom self collision profile
-{{https://docs.unrealengine.com/latest/INT/Programming/Tutorials/FirstPersonShooter/3/3/index.html}}
+[custom self collision profile](https://docs.unrealengine.com/latest/INT/Programming/Tutorials/FirstPersonShooter/3/3/index.html)
+
 
 * code
 {{https://docs.unrealengine.com/latest/INT/Programming/Tutorials/FirstPersonShooter/3/4/index.html}}

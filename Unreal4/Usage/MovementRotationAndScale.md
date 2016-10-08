@@ -74,3 +74,5 @@ USceneComponent->SetWorldScale3D(FVector(CurrentScale));
 ```
 
 
+
+[Rotating Component](https://wiki.unrealengine.com/Blueprint_Rotating_Movement_Component)
