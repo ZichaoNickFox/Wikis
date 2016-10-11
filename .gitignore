@@ -1,2 +1,4 @@
 *.swp
 *.wiki~
+*.md~
+*.gitignore~
